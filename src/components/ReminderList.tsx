@@ -2,14 +2,20 @@ import React from 'react';
 import Reminder from './models/reminder';
 
 interface ReminderListProps { 
-    items : Reminder[]
+    items: Reminder[],
+    onRemoveReminder: (id:number) => void
 }
 
 
-function ReminderList({ items}:ReminderListProps) {
+function ReminderList({ items, onRemoveReminder}:ReminderListProps) {
     return (
-        <ul>
-            {items.map((item) => <li key={item.id}>{ item.title}</li>)}
+        <ul className='list-group'>
+            {items.map((item) => <li key={item.id} className='list-group-item'>
+                {item.title}
+                <button onClick={() => onRemoveReminder(item.id)} className="btn btn-outline-danger rounded-pill mx-5">Delete</button>
+            </li>
+                
+            )}
         </ul>
     );
 }
