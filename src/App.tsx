@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import ReminderList from './components/ReminderList';
-import Reminder from './components/models/reminder';
-import reminderService from './components/services/reminder'
+import Reminder from './models/reminder';
+import reminderService from './services/reminder'
 import NewReminder from './components/NewReminder';
 
 function App() {
